@@ -6,7 +6,7 @@
 Overview of the proposed framework of Gestura: Gestura introduces a two-phase training framework for open world gesture understanding
 
 ## Landmark Processing Module
-
+![hands](hands.png)
 
 ## Large Vision Language Model
-![Compare](comparem.png)
+![Compare](contrastm.png)
