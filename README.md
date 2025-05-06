@@ -7,6 +7,8 @@ Overview of the proposed framework of Gestura: Gestura introduces a two-phase tr
 
 ## Landmark Processing Module
 ![hands](hands.png)
+The process of deriving encoded features from hand video data
 
 ## Large Vision Language Model
 ![Compare](contrastm.png)
+Score rating and comparison of answers with and without CoT tuning
