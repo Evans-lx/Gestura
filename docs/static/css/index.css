@@ -192,3 +192,9 @@ video:focus {
     padding-bottom: 75%; /* 4:3 aspect ratio for mobile */
   }
 }
+
+.is-centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
