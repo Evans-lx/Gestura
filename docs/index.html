@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="SmartFreeEdit">
-  <meta name="keywords" content="Image editing, Diffusion, Inpainting, MLLM">
+        content="Gestura">
+  <meta name="keywords" content="Free-Form Gesture, Gesture Understanding, Gesture Intention, Large Vision Language
+Model, Multi-Modal">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SmartFreeEdit: Mask-Free Spatial-Aware Image Editing with Complex Instruction Understanding</title>
+  <title>Gestura: A LVLM-Powered System Bridging Motion and Semantics for Real-Time Free-Form Gesture Understanding</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -47,12 +48,15 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title"><span style="text-decoration: underline;"> SmartFreeEdit</span>: Mask-Free Spatial-Aware Image Editing with Complex Instruction Understanding</h1>
+            <h1 class="title is-2 publication-title"><span style="text-decoration: underline;"> Gestura</span>: A LVLM-Powered System Bridging Motion and Semantics for Real-Time Free-Form Gesture Understanding</h1>
             <div class="is-size-4 publication-authors">
               <span class="author-block">
-                <a href="https://github.com/Decemberease">Qianqian Sun</a><sup>1*</sup>,</span>
+                Zhuoming Li</a><sup>1*</sup>,</span>
               <span class="author-block">
-                <a href="https://github.com/smileformylove">Jixiang Luo</a><sup>2†</sup>,
+                Aitong Liu</a><sup>2†</sup>,
+              </span>
+              <span class="author-block">
+                Mengxi Jia</a><sup>2</sup>
               </span>
               <span class="author-block">
                 <a href="https://github.com/dell-zhang">Dell Zhang</a><sup>2</sup>
@@ -63,7 +67,7 @@
             </div>
 
             <div class="is-size-4 publication-authors">
-              <span class="author-block"><sup>1</sup> The University of Hongkong</span>
+              <span class="author-block"><sup>1</sup> Southeast University</span>
               <span class="author-block"><sup>2</sup> Institute of Artificial Intelligence (TeleAI), China
                 Telecom</span>
             </div>
@@ -114,12 +118,16 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <img src="./results.png" alt="teaser" width="100%">
+        <video width="100%" controls>
+          <source src="./0522.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
         <h2 class="subtitle has-text-centered">
 
-         We propose <span class="SmartFreeEdit"></span>SmartFreeEdit to address the challenge of reasoning instructions and segmentations in image editing, 
-         thereby enhancing the practicality of AI editing. Our method effectively handles some semantic editing operations, 
-         including adding, removing, changing objects, background changing and global editing.</h2>
+         contributes a unified framework that leverages structured
+hand landmark priors to enhance the semantic reasoning capabilities of LVLM, achieving fine-grained and
+interpretable recognition of free-form gestures in open-world scenarios through hierarchical alignment and
+progressive training.</h2>
       </div>
     </div>
   </section>
@@ -130,12 +138,10 @@
         <div class="column is-five-fifths">
           <h2 class="title is-3 has-text-centered"> 🎨 Results </h2>
           <div class="content has-text-justified">
-            <img src="./v5.png" width="100%"">
+            <img src="./comparison1.png" width="100%"">
             <p>
-            <span style="font-weight: bold;">Qualitative comparisons of SmartFreeEdit on Reason-Edit with previous instruction-based image editing methods 
-              including InstructPix2Pix (IP2P), InstructDiffusion(IDiff), MagicBrush, BrushEdit, SmartEdit(13B) and latest Gemini 2.0 Flash. Mask-free methods 
-              don't require additional mask input, where we take these methods with same instructions as baselines for comparison and our approach demonstrates 
-              superior editing capabilities in complex scenarios.
+            <span style="font-weight: bold;">Comparison between our Gestura and the currently state-of-the-art LVLM models on our Test sets of GestureInt
+dataset. Metrics include BLEU-1∼4 and ACC (where ACC reports both closed-set / open-set results).
           </p>
           </div>
         </div>
@@ -151,16 +157,23 @@
           <h2 class="title is-3">💬 Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Recent advancements in image editing have utilized large-scale multimodal models to enable intuitive, natural instruction-driven
-              interactions. However, conventional methods still face significant challenges, particularly in spatial reasoning, precise region segmentation, and maintaining semantic consistency, especially in
-              complex scenes. To overcome these challenges, we introduce <span style="font-weight: bold;">SmartFreeEdit</span>, a novel end-to-end framework that integrates a multi
-              modal large language model (MLLM) with a hypergraph-enhanced inpainting architecture, enabling precise, mask-free image edit
-              ing guided exclusively by natural language instructions. The key innovations of <span style="font-weight: bold;">SmartFreeEdit</span> include: 
-              (1) the introduction of region aware tokens and a mask embedding paradigm that enhance the model’s spatial understanding of complex scenes; 
-              (2) a reasoning segmentation pipeline designed to optimize the generation of editing masks based on natural language instructions; and 
-              (3) a hypergraph-augmented inpainting module that ensures the preservation of both structural integrity and semantic coherence during complex edits, overcoming the limitations of local-based image generation.
-              Extensive experiments on the Reason-Edit benchmark demonstrate that <span style="font-weight: bold;">SmartFreeEdit</span> surpasses current state-of-the-art methods across multiple evaluation metrics, 
-              including segmentation accuracy, instruction adherence, and visual quality preservation, while addressing the issue of local information focus and improving global consistency in the edited image.
+              Free-form gesture understanding is highly appealing for human-computer interaction, as it liberates users from the constraints
+of predefined gesture categories. However, the sole existing solution—GestureGPT—suffers from limited recognition accuracy
+and slow response times. In this paper, we propose Gestura, an end-to-end system for free-form gesture understanding. Gestura
+harnesses a pre-trained Large Vision-Language Model (LVLM) to align the highly dynamic and diverse patterns of free-form
+gestures with high-level semantic concepts. To better capture subtle hand movements across different styles, we introduce a
+Landmark Processing Module that compensate for LVLMs’ lack of fine-grained domain knowledge by embedding anatomical
+hand priors. Further, a Chain-of-Thought (CoT) reasoning strategy enables step-by-step semantic inference, transforming
+shallow knowledge into deep semantic understanding and significantly enhancing the model’s ability to interpret ambiguous
+or unconventional gestures. Together, these components allow Gestura to achieve robust and adaptable free-form gesture
+comprehension. Additionally, we have developed the first open-source dataset for free-form gesture intention reasoning
+and understanding with over 300,000 annotated QA pairs. Experimental results show that Gestura achieves the accuracy of
+84.73% (closed-set) / 64.14% (open-set) in the exocentric (third-person) setting and 66.14% (closed-set) / 21.71% (open-set) in the
+egocentric (first-person) setting, achieving approximately 20% and 40% higher accuracy on closed-set and open-set tasks,
+respectively, compared to GestureGPT. Moreover, Gestura achieves over a 100× speedup in response time (1.6 seconds vs.
+227 seconds) on an 8B-sized model deployed on a single NVIDIA A100 40GB GPU, and has been validated through real-device
+experiments with an edge–cloud collaborative setup, bringing free-form gesture understanding markedly closer to practical,
+real-world deployment. 
             
             </p>
           </div>
@@ -178,10 +191,15 @@
       <div class="column is-full-width">
 
         <div class="content has-text-justified">
-          <img src="./pipeline.png" width="100%">
+          <img src="gesturem.png" width="100%">
           <p>
-            Architecture Overview of <span
-                style="font-weight: bold;">SmartFreeEdit</span> for Reasoning Complex Scenarios Instruction-Based Editing. Our SmartFreeEdit consists of three key components: (1) An MLLM-driven Promptist that decomposes instructions into Editing Objects, Category, and Target Prompt. (2) Reasoning segmentation converts the prompt into an inference query and generates reasoning masks. (3) An Inpainting-based Image Editor using the hypergraph computation module to enhance global image structure understanding for more accurate edits.          </p>
+            Overview of the proposed framework of <span
+                style="font-weight: bold;">Gestura</span>. Gestura introduces a hierarchical framework with
+two-phase training for free-form gesture understanding. First, the pre-training stage activates the model’s potential
+for free-form generalization by using a multi-view semantic enhancement strategy. In Stage 2, Gestura leverages well-trained
+landmark processing module to deliver anatomical and spatial contextual signals to the LVLM backbone, while internalizing
+advanced reasoning capabilities through Chain-of-Thought (CoT) tuning. This dual mechanism expands the model’s reasoning
+boundaries, enabling superior generalization in free-form gesture understanding. </p>
         </div>
       </div>
     </div>
@@ -194,9 +212,9 @@
       <div class="column is-full-width">
 
         <div class="content has-text-justified">
-          <img src="./comparison.png">
+          <img src="./realenv.png">
           <p>
-            <span style="font-weight: bold;">Quantitative comparison of SmartFreeEdit with existing methods on Reason-Edit.
+            <span style="font-weight: bold;">Top-1 / Top-3 / Top-5 accuracy per intent category in an open-world experiment.
           </p>
         </div>
       </div>
