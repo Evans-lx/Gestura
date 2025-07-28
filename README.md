@@ -3,6 +3,9 @@
 
 [End-to-end Demo](https://drive.google.com/file/d/19PsMMArJM74NLqvo-OS6-_XMKJYx1BnH/view?usp=drive_link)
 
+[Model]()
+
+[Dataset]()
 # Framework
 ![Framework](gesturem.png)
 **Overview of the proposed framework of Gestura: Gestura introduces a two-phase training framework for open world gesture understanding**
@@ -14,3 +17,4 @@
 ## Large Vision Language Model
 ![Compare](contrastm.png)
 **Score rating and comparison of answers with and without CoT tuning**
+
